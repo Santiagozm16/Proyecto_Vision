@@ -12,13 +12,9 @@ import math
 
 
 carCascade = cv2.CascadeClassifier('vech.xml')
-<<<<<<< HEAD
-video = cv2.VideoCapture('Video 1.mp4')
+video = cv2.VideoCapture('Video 3.mp4')
 #carCascade = cv2.CascadeClassifier('cascade4.xml')
-=======
-video = cv2.VideoCapture('CCTVPrueba_480p.mp4')
 
->>>>>>> parent of 4161704 (Archivos y Videos)
 WIDTH = 1280
 HEIGHT = 720
 
@@ -76,13 +72,8 @@ def trackMultipleObjects():
         
         if not (frameCounter % 10):
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-<<<<<<< HEAD
             cars = carCascade.detectMultiScale(gray, 1.3, 13, 10, (8,10)) #img, scale, minNeighbor, min size, max size
-            #print("Cars",cars)
-=======
-            cars = carCascade.detectMultiScale(gray, 1.1, 13, 18, (24, 24))
 
->>>>>>> parent of 4161704 (Archivos y Videos)
             for (_x, _y, _w, _h) in cars:
                 x = int(_x)
                 y = int(_y)
@@ -95,13 +86,8 @@ def trackMultipleObjects():
                 matchCarID = None
 
                 for carID in carTracker.keys():
-<<<<<<< HEAD
                     trackedPosition = carTracker[carID].get_position() #Empaqueta en 2 tuplas  x,y,w,h
                     #print("tracker",trackedPosition)
-=======
-                    trackedPosition = carTracker[carID].get_position()
-
->>>>>>> parent of 4161704 (Archivos y Videos)
                     t_x = int(trackedPosition.left())
                     t_y = int(trackedPosition.top())
                     t_w = int(trackedPosition.width())
